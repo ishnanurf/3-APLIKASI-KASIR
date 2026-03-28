@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>kasir modern</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>KASIR</h1>
+
+<!-- HOME -->
+<div id="home" class="page active">
+    <div class="card-container">
+        <div class="card" onclick="showPage('keuangan')">Keuangan</div>
+        <div class="card" onclick="showPage('pemesanan')">Pemesanan</div>
+    </div>
+</div>
+
+<!-- PEMESANAN -->
+<div id="pemesanan" class="page hidden">
+
+    <h2>Pilih Menu</h2>
+
+    <div class="section-box">
+
+        <div class="kategori">
+            <button onclick="showMenu('makanan')">Makanan</button>
+            <button onclick="showMenu('minuman')">Minuman</button>
+            <button onclick="showMenu('snack')">Snack & Dessert</button>
+        </div>
+
+        <!-- list menu -->
+        <div id="menuList" class="menu-grid"></div>
+
+        <h3>Pesanan</h3>
+        <ul id="cart"></ul>
+
+        <h3 id="total">total: 0</h3>
+
+        <button onclick="prosesCash()">cash</button>
+        <button onclick="prosesQR()">qr</button>
+
+    </div>
+    <button onclick="prosesCash()">cash</button>
+    <button onclick="prosesQR()">qr</button>
+    <button onclick="back()">kembali</button>
+</div>
+
+<!-- KEUANGAN -->
+<div id="keuangan" class="page hidden">
+    <h2>Laporan</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>total</th>
+                <th>metode</th>
+            </tr>
+        </thead>
+        <tbody id="dataKeuangan"></tbody>
+    </table>
+    <button onclick="back()">kembali</button>
+</div>
+
+<!-- STRUK -->
+<div id="struk" class="page hidden">
+    <div class="struk-box">
+        <h2>Struk Pembayaran</h2>
+        <div id="isiStruk"></div>
+    </div>
+    <button onclick="back()">Selesai</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
